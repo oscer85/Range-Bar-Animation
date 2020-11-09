@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+#line1 {
+  stroke-dasharray: 3;
+  stroke-dashoffset: 3;
+  animation: bar-anim .3s cubic-bezier(.64, .13, .91, .93) forwards;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+#line2 {
+  stroke-dasharray: 6;
+  stroke-dashoffset: 6;
+  animation: bar-anim .3s cubic-bezier(.64, .13, .91, .93) forwards .2s;
+}
+
+#line3 {
+  stroke-dasharray: 9;
+  stroke-dashoffset: 9;
+  animation: bar-anim .3s cubic-bezier(.64, .13, .91, .93) forwards .4s;
+}
+
+#line4 {
+  stroke-dasharray: 12;
+  stroke-dashoffset: 12;
+  animation: bar-anim .3s cubic-bezier(.64, .13, .91, .93) forwards .6s;
+}
+
+svg:hover #line4 {
+  animation: bar4-backward 1.5s cubic-bezier(.64, .13, .91, .93) forwards;
+}
+
+svg:hover {
+  cursor: pointer;
+}
+
+@keyframes bar-anim {
   to {
-    transform: rotate(360deg);
+    stroke-dasharray: 12;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes bar4-backward {
+  0% {
+    stroke-dasharray: 12;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 12;
+    stroke-dashoffset: 12;
+  }
+
+  100% {
+    stroke-dasharray: 12;
+    stroke-dashoffset: 0;
   }
 }
