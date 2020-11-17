@@ -30,7 +30,7 @@ body {
 }
 
 svg:hover #line4 {
-  animation: bar4-backward 1.5s cubic-bezier(.64, .13, .91, .93) forwards;
+  animation: bar4-backward 0.2s cubic-bezier(.64, .13, .91, .93) forwards 0s;
 }
 
 svg:hover {
@@ -50,13 +50,8 @@ svg:hover {
     stroke-dashoffset: 0;
   }
 
-  50% {
-    stroke-dasharray: 12;
-    stroke-dashoffset: 12;
-  }
-
   100% {
     stroke-dasharray: 12;
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 12;
   }
 }
